@@ -1,0 +1,11 @@
+title: GarageModel
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  cars:
+    type: array
+    items:
+      $ref: ./CarModel.v1.yaml

@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Car Garage API
+  version: '1.0'
+  description: test
+  contact:
+    email: admin@example.com
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/garage/{id}':
+    get:
+      summary: Get the garage detail and a list of cars
+      tags: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The ID of the garage
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GarageModel'
+      operationId: get-garage-cars
+      description: test
+  '/cars/{id}':
+    get:
+      summary: Get the detais of a car
+      tags: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The ID of the car
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarModel'
+      operationId: get-garage-cars-single
+      description: test
+tags:
+  - name: Car Garage
+components:
+  securitySchemes:
+    AwsApiGatewayKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-aws-api-id: owuw75mril
+  schemas:
+    GarageModel:
+      $ref: ./common/models/GarageModel.v1.yaml
+    CarModel:
+      $ref: ./common/models/CarModel.v1.yaml

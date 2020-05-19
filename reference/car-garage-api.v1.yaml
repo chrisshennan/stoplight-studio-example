@@ -21,13 +21,11 @@ paths:
           description: The ID of the garage
       responses:
         '200':
-          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GarageModel'
-      operationId: get-garage-cars
-      description: test
+                $ref: '#/components/responses/GarageResponse'
+          description: Sample Response from Garage Endpoint
   '/cars/{id}':
     get:
       summary: Get the detais of a car
@@ -48,6 +46,22 @@ paths:
                 $ref: '#/components/schemas/CarModel'
       operationId: get-garage-cars-single
       description: test
+      security:
+        - AwsApiGatewayKey: []
+      x-amazon-apigateway-auth:
+        type: none
+      x-amazon-apigateway-integration:
+        uri: 'http://${stageVariables.nlbUrl}/'
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        passthroughBehavior: when_no_match
+        connectionType: VPC_LINK
+        connectionId: '${stageVariables.vpcLinkId}'
+        httpMethod: GET
+        type: http_proxy
 tags:
   - name: Car Garage
 components:
@@ -59,6 +73,9 @@ components:
       x-aws-api-id: owuw75mril
   schemas:
     GarageModel:
-      $ref: ./common/models/GarageModel.v1.yaml
+      $ref: ./common/schemas/GarageModel.v1.yaml
     CarModel:
-      $ref: ./common/models/CarModel.v1.yaml
+      $ref: ./common/schemas/CarModel.v1.yaml
+  responses:
+    GarageResponse:
+      $ref: ./common/responses/GarageResponse.yaml

@@ -1,0 +1,14 @@
+type: object
+properties:
+  type: 
+    type: string
+    description: The type of entity.  This is always User
+    enum: 
+      - User
+  id:
+    type: string
+    description: The id of the user record
+    example: 536b7ef5-6c5a-49fd-9ec3-8197679e1575
+required:
+  - type
+  - id 

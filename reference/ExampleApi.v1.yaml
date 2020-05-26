@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  description: Example API
+  version: '1.0'
+  contact:
+    name: Chris Shennan
+    email: chris@chrisshennan.com
+    url: 'https://chrisshennan.com'
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - name: General
+paths:
+  /changelog:
+    get:
+      operationId: changelog-get-list
+      description: Retrieve a list of recent changes
+      tags:
+        - General
+      responses:
+        '200':
+          $ref: '#/components/responses/GetChangeLogSuccess'
+
+components:
+  schemas: 
+    ChangeLogItemMeta:
+      $ref: schemas/ChangeLogItemMeta.yaml
+
+    ChangeLogItemData:
+      $ref: ./schemas/ChangeLogItemData.yaml
+
+    ChangeLogItemLinks:
+      $ref: ./schemas/ChangeLogItemLinks.yaml
+
+    ChangeLogItemAttributes:
+      $ref: ./schemas/ChangeLogItemAttributes.yaml
+
+    ChangeLogItemRelationships:
+      $ref: ./schemas/ChangeLogItemRelationships.yaml
+
+    UserRelationshipData:
+      $ref: ./schemas/UserRelationshipData.yaml
+
+    UserRelationshipLinks:
+      $ref: ./schemas/UserRelationshipLinks.yaml
+
+  responses:
+    GetChangeLogSuccess:
+      $ref: ./responses/GetChangeLogSuccess.yaml
+
+  examples:
+    GetChangeLogSuccess:
+      $ref: ./examples/GetChangeLogSuccess.yaml
+

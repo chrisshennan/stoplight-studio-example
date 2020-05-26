@@ -1,0 +1,22 @@
+type: object
+properties:
+  type:
+    type: string
+    description: The type of entity.  This is always ChangeLogItem
+    enum:
+      - ChangeLogItem
+  id:
+    type: string
+    format: uuid
+    description: The UUID for the changelog item
+    example: a7497228-f064-43f9-a5b2-d9eb53d667e0
+  attributes:
+    $ref: '#/components/schemas/ChangeLogItemAttributes'
+  relationships:
+    $ref: '#/components/schemas/ChangeLogItemRelationships'
+required:
+  - type
+  - id
+  - attributes
+  - relationships
+description: ''

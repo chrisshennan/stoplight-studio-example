@@ -1,0 +1,19 @@
+description: OK
+content:
+  application/vnd.api+json:
+    schema:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/ChangeLogItemMeta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChangeLogItemData'
+        links:
+          $ref: '#/components/schemas/ChangeLogItemLinks'
+      required:
+        - data
+    examples:
+      Success:
+        $ref: '#/components/examples/GetChangeLogSuccess'

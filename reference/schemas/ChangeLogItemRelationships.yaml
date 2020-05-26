@@ -1,0 +1,7 @@
+type: object
+properties:
+  links:
+    $ref: '#/components/schemas/UserRelationshipLinks' 
+  data:
+    $ref: '#/components/schemas/UserRelationshipData' 
+  

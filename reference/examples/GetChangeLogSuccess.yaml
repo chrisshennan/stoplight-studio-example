@@ -1,0 +1,17 @@
+value:
+  data:
+    - type: ChangeLogItem
+      id: 93fe7a9a-7b28-4016-aed2-a3e9031161d2
+      attributes:
+        field: submitted_amount
+        currentValue: 8926.25
+        previousValue: 8024.12
+        createdAt: '2020-05-25T11:48:20'
+        status: submitted
+      relationships:
+        user:
+          links:
+            self: 'https://api.example.com/v1/user/df406dc7-1639-4f43-ada9-9d4c51056076'
+          data:
+            type: user
+            id: df406dc7-1639-4f43-ada9-9d4c51056076

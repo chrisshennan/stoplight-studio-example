@@ -1,0 +1,24 @@
+type: object
+properties:
+  field:
+    type: string
+    description: The field that was updated
+    example: submitted_amount
+  currentValue:
+    type: string
+    description: The current value of the field
+    example: "8926.25"
+  previousValue:
+    type: string
+    description: The previous value of the field
+    example: "8024.12"
+  createdAt:
+    type: string
+    format: date-time
+    description: The date and time the update was created
+    example: 2020-05-25T14:14:00
+required:
+  - field
+  - currentValue
+  - previousValue
+  - createdAt

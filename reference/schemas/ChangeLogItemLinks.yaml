@@ -1,0 +1,8 @@
+type: object
+properties:
+  self:
+    type: string
+    description: The URL of the change log item
+    example: https://api.example.com/v1/changelog/8f6362fa-6503-4422-87f5-9929061142ec
+required:
+  - self

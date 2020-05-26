@@ -1,0 +1,8 @@
+type: object
+properties:
+  self:
+    type: string
+    description: The URL of the user object
+    example: https://api.example.com/v1/user/acff68d5-3b53-4a95-ac83-6f4af154d5d6
+required:
+  - self

@@ -1,0 +1,6 @@
+type: object
+properties:
+  totalPages:
+    type: integer
+  totalResults:
+    type: integer

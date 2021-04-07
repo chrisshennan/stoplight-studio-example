@@ -8,4 +8,4 @@ properties:
   cars:
     type: array
     items:
-      $ref: ./CarModel.v1.yaml
+      $ref: ./CarModel.yaml

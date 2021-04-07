@@ -25,7 +25,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GarageModel'
+                $ref: ./common/models/GarageModel.yaml
       operationId: get-garage-cars
       description: test
   '/cars/{id}':
@@ -45,7 +45,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CarModel'
+                $ref: ./common/models/CarModel.yaml
+              examples:
+                example-1:
+                  value:
+                    id: string
+                    make: string
+                    model: string
       operationId: get-garage-cars-single
       description: test
 tags:
@@ -57,8 +63,3 @@ components:
       in: header
       name: x-api-key
       x-aws-api-id: owuw75mril
-  schemas:
-    GarageModel:
-      $ref: ./common/models/GarageModel.v1.yaml
-    CarModel:
-      $ref: ./common/models/CarModel.v1.yaml
